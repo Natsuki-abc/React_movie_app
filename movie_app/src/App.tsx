@@ -27,32 +27,41 @@ type MovieJson = {
 
 function App() {
   const fetchMovieList = async () => {
-    const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
-    let url = "";
+    try {
+      const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
+      let url = "";
 
-    if (keyword) {
-      url = `https://api.themoviedb.org/3/search/movie?query=${encodeURIComponent(
-          keyword
-        )}&include_adult=false&language=ja&page=1`;
-    } else {
-      url = "https://api.themoviedb.org/3/movie/popular?language=ja&page=1";
+      if (keyword) {
+        url = `https://api.themoviedb.org/3/search/movie?query=${encodeURIComponent(
+            keyword
+          )}&include_adult=false&language=ja&page=1`;
+      } else {
+        url = "https://api.themoviedb.org/3/movie/popular?language=ja&page=1";
+      }
+
+      const response = await fetch(url, {
+        headers: {
+          Authorization: `Bearer ${API_KEY}`,
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error(`API取得エラー:${response.status}`);
+      }
+
+      const data = await response.json();
+      const result = data.results;
+
+      const movieList = result.map((movie: MovieJson) => ({
+        id: movie.id,
+        original_title: movie.title,
+        poster_path: movie.poster_path,
+        overview: movie.overview,
+      }));
+      setMovieList(movieList);
+    } catch (error) {
+      console.error("Error fetching movie list:", error);
     }
-
-    const response = await fetch(url, {
-      headers: {
-        Authorization: `Bearer ${API_KEY}`,
-      },
-    });
-
-    const data = await response.json();
-    const result = data.results;
-
-    const movieList = result.map((movie: MovieJson) => ({
-      id: movie.id,
-      original_title: movie.title,
-      poster_path: movie.poster_path,
-    }));
-    setMovieList(movieList);
   };
 
   const [keyword, setKeyword] = useState("");
@@ -67,7 +76,6 @@ function App() {
       <div>{keyword}</div>
       <input type="text" onChange={(e) => setKeyword(e.target.value)} />
       {movieList
-        .filter((movie) => movie.original_title.includes(keyword))
         .map((movie) => (
           <div key={movie.id}>
             <h2>{movie.original_title}</h2>
