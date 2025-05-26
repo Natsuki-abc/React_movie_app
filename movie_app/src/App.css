@@ -13,7 +13,7 @@ body {
   height: 50px;
   position: sticky;
   top: 0;
-　display: flex;
+  display: flex;
   z-index: 9999;
 }
 

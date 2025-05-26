@@ -118,7 +118,7 @@ function MovieDetail() {
           </div>
           <div className="movie-detail-details">
             <div>
-              <h1 className="movie-detail-title">{movie?.name}</h1>
+              <h1 className="movie-detail-title">{movie?.original_title}</h1>
               <div className="movie-detail-badges">
                 <span className="badge-outline">{movie?.year}</span>
                 <span className="badge-outline">PG-13</span>

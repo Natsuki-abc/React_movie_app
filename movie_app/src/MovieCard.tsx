@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import { Link } from "react-router";
 
 type Movie = {
   id: number;
@@ -12,7 +13,7 @@ type Props = {
 };
 
 const MovieCard: React.FC<Props> = ({ movie }) => (
-  <a key={movie.id} href={`/movies/${movie.id}`} className="movie-card">
+  <Link to={`/movies/${movie.id}`} className="movie-card">
     <div className="movie-card__imgwrap">
       <img
         src={
@@ -27,7 +28,7 @@ const MovieCard: React.FC<Props> = ({ movie }) => (
         <h3 className="movie-card__title">{movie.original_title}</h3>
       </div>
     </div>
-  </a>
+  </Link>
 );
 
 export default MovieCard;

@@ -30,7 +30,6 @@
     width: 100vw;
     max-width: 100vw;
     margin: 0;
-    padding: 48px 16px 0 16px;
     box-sizing: border-box;
     padding: 0 100px;
   }
@@ -89,11 +88,6 @@
     gap: 24px;
   }
 
-  .movie-detail-overview {
-    color: #ccc;
-    line-height: 1.7;
-  }
-
   .movie-detail-section {
     border-top: 1px solid #222;
     padding-top: 24px;
@@ -125,36 +119,10 @@
     color: #ffb400;
     fill: #ffb400;
   }
-  .movie-detail-overview {
-    color: #ccc;
-    line-height: 1.7;
-  }
   .movie-detail-genres {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-  }
-  .movie-detail-actions {
-    display: flex;
-    gap: 16px;
-    padding-top: 8px;
-  }
-  .movie-detail-btn {
-    font-size: 16px;
-    border-radius: 6px;
-    padding: 10px 22px;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    border: none;
-    background: #444;
-    color: #fff;
-    transition: background 0.2s, color 0.2s;
-  }
-  .movie-detail-btn-primary {
-    background: #e11d48;
-    color: #fff;
   }
   .movie-detail-btn:hover {
     background: #666;
@@ -186,42 +154,7 @@
     font-size: 13px;
     color: #fff;
   }
-  .movie-detail-btn {
-    font-size: 16px;
-    border-radius: 6px;
-    padding: 10px 22px;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    border: none;
-    background: #444;
-    color: #fff;
-    transition: background 0.2s, color 0.2s;
-  }
-  .movie-detail-btn-primary {
-    background: #e11d48;
-    color: #fff;
-  }
-  .movie-detail-btn:hover {
-    background: #666;
-    color: #fff;
-  }
-  .movie-detail-btn-primary:hover {
-    background: #be123c;
-    color: #fff;
-  }
 
-  .movie-detail-actions {
-    display: flex;
-    gap: 16px;
-    padding-top: 8px;
-  }
-
-  .movie-detail-btn-icon {
-    margin-right: 8px;
-    vertical-align: middle;
-  }
   .movie-detail-rating {
     background: #292929;
     color: #ffb400;
@@ -261,8 +194,11 @@
     display: flex;
     gap: 12px;
     margin-bottom: 18px;
+    padding-top: 8px;
   }
   .movie-detail-btn {
+    display: flex;
+    align-items: center;
     background: #232323;
     color: #fff;
     border: none;
@@ -278,12 +214,6 @@
     background: #e50914;
     color: #fff;
     box-shadow: 0 2px 12px rgba(229, 9, 20, 0.22);
-  }
-  .movie-detail-btn:hover {
-    background: #333;
-  }
-  .movie-detail-btn-primary:hover {
-    background: #b0060f;
   }
 
   .movie-detail-cast-block {
