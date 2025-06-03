@@ -61,7 +61,7 @@ function MovieDetail() {
   const [movie, setMovie] = useState<Movie | null>(null);
   useEffect(() => {
     fetchMovieDetail();
-  }, []);
+  }, []); // 最初に一度だけ実行するために空の依存配列を指定
 
   const fetchMovieDetail = async () => {
     const API_KEY = import.meta.env.VITE_TMDB_API_KEY;

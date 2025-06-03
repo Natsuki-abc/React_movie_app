@@ -31,10 +31,6 @@ body {
   margin: 2.5rem 0 2rem 2rem;
 }
 
-.hero-section-content {
-  position: relative;
-}
-
 .app-search {
   width: 340px;
   font-size: 1.1rem;

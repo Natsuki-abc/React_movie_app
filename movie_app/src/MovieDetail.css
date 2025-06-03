@@ -119,11 +119,6 @@
     color: #ffb400;
     fill: #ffb400;
   }
-  .movie-detail-genres {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
   .movie-detail-btn:hover {
     background: #666;
     color: #fff;
@@ -251,22 +246,7 @@
   }
 
   @media (max-width: 900px) {
-    .movie-detail-main {
-      flex-direction: column;
-      align-items: center;
-      padding: 0 0 36px 0;
-      max-width: 97vw;
-    }
-    .movie-detail-poster-col {
-      padding: 28px 0 12px 0;
-      min-width: 0;
-      width: 100%;
-    }
-    .movie-detail-info-col {
-      padding: 22px 12px 32px 12px;
-      gap: 12px;
-    }
-    .movie-detail-poster {
+    .movie-detail-poste-wrap {
       width: 80vw;
       max-width: 340px;
       height: auto;
