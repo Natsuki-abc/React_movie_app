@@ -246,7 +246,7 @@
   }
 
   @media (max-width: 900px) {
-    .movie-detail-poste-wrap {
+    .movie-detail-poster-wrap {
       width: 80vw;
       max-width: 340px;
       height: auto;
